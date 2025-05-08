@@ -112,10 +112,22 @@ public class QuestionService
             answerIndex++;
         }
         
+    }
+
+    public void displayScore()
+    {
+        int score = 0;
+
         System.out.println("Your answers are:");
         for (int i = 0; i < answers.length; i++)
         {
-            System.out.println("Question " + (i + 1) + ": " + questions[i].getOptions()[answers[i]].getText());
+            System.out.println("Question " + (i + 1) + ": " + questions[i].getOptions()[answers[i]].getText() + " (" + questions[i].getOptions()[answers[i]].isAnswer() + ")");
+
+            if (questions[i].getOptions()[answers[i]].isAnswer())
+            {
+                score++;
+            }
         }
+        System.out.println("Your score is: " + score + "/" + questions.length);
     }
 }

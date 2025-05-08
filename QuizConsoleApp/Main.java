@@ -7,5 +7,8 @@ public class Main
         System.out.println();
         QuestionService questionService = new QuestionService();
         questionService.playQuiz();
+        questionService.displayScore();
+        System.out.println();
+        System.out.println("Thank you for playing!");
     }
 }
