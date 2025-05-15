@@ -9,7 +9,7 @@ public final class App {
     private App() {
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         /*
          * importa package
          * load and register
@@ -19,15 +19,31 @@ public final class App {
          * close the connection
          */;
 
+        String url ="jdbc:postgresql://localhost:5432/database";
+        String user = "postgres";
+        String password = "0000";
+
+
         try 
         {
             Class.forName("org.postgresql.Driver");
-            Conection = Driver
+            Connection connection = DriverManager.getConnection(url, user, password);
+
+            System.out.println("Connected to the database!");
         }
         catch (ClassNotFoundException e)
         {
-            System.out.println("churra");
+            System.out.println("Driver not found!");
             e.printStackTrace();
+        }
+        catch (SQLException e)
+        {
+            System.out.println("Connection failed!");
+            e.printStackTrace();
+        }
+        finally
+        {
+            System.out.println("End of program");
         }
 
 
