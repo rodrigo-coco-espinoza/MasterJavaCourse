@@ -43,5 +43,12 @@ lib/
 # Maven wrapper files
 .mvn/wrapper/maven-wrapper.jar
 
+# Hibernate specific files
+# hibernate.cfg.xml
+*.h2.db
+*.mv.db
+*.db
+*.trace.db
+
 # Others
 *.swp
