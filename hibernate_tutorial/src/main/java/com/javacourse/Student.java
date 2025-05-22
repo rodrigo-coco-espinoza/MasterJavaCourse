@@ -1,7 +1,9 @@
 package com.javacourse;
 
+import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -11,8 +13,10 @@ public class Student
     private int id;
     private String name;
     private int marks;
-    @OneToOne
-    private Teacher favouriteTeacher;
+    // @OneToOne
+    // private Teacher favouriteTeacher;
+    // @OneToMany(mappedBy = "student")
+    // private List<Teacher> asignedTeachers;
  
 
     public int getId() {
@@ -30,20 +34,25 @@ public class Student
     public void setMarks(int marks) {
         this.marks = marks;
     }
-    
     public int getMarks() {
         return marks;
     }
-    public Teacher getFavouriteTeacher() {
-        return favouriteTeacher;
-    }
-    public void setFavouriteTeacher(Teacher favouriteTeacher) {
-        this.favouriteTeacher = favouriteTeacher;
-    }
+    // public Teacher getFavouriteTeacher() {
+    //     return favouriteTeacher;
+    // }
+    // public void setFavouriteTeacher(Teacher favouriteTeacher) {
+    //     this.favouriteTeacher = favouriteTeacher;
+    // }
+    // public List<Teacher> getAsignedTeachers() {
+    //     return asignedTeachers;
+    // }
+    // public void setAsignedTeachers(List<Teacher> asignedTeachers) {
+    //     this.asignedTeachers = asignedTeachers;
+    // }
 
     @Override
     public String toString() {
-        return "Student [id=" + id + ", name=" + name + ", marks=" + marks + ", favouriteTeacher=" + favouriteTeacher + "]";
+        return "Student [id=" + id + ", name=" + name + ", marks=" + marks + "]"; //, favouriteTeacher=" + favouriteTeacher + ", asignedTeachers=" + asignedTeachers + "]";
     }
     
 

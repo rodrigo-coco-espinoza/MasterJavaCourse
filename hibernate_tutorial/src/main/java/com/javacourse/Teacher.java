@@ -3,8 +3,9 @@ package com.javacourse;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
+//import jakarta.persistence.Table;
+//import jakarta.persistence.Transient;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 //@Table(name = "teachers")
@@ -16,6 +17,8 @@ public class Teacher {
     private String name;
     //@Transient
     private String subject;
+    @ManyToOne
+    private Student student;
 
     public int getId() {
         return id;
@@ -35,10 +38,16 @@ public class Teacher {
     public void setSubject(String subject) {
         this.subject = subject;
     }
+    public Student getStudent() {
+        return student;
+    }
+    public void setStudent(Student student) {
+        this.student = student;
+    }
 
     @Override
     public String toString() {
-        return "Teacher [id=" + id + ", name=" + name + ", subject=" + subject + "]";
+        return "Teacher [id=" + id + ", name=" + name + ", subject=" + subject + ", student=" + student + "]";
     }
 
     
