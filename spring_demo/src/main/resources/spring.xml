@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="person" class="spring_demo.Person">
+        <!-- Assing value through constructor if every data type is different <constructor-arg type="int" value="21"/>
+        <constructor-arg type="spring_demo.Laptop" ref="laptop"/> -->
+
+        <constructor-arg index="0" value="21"/>
+        <constructor-arg index="1" ref="laptop"/>
+
+        <!-- Assing value through constructor and name 
+        <constructor-arg name="age" value="21"/>
+        <constructor-arg name="assignedLaptop" ref="laptop" /> 
+        Must use @ConstructorProperties in class -->
+
+        <!-- Assing value through setter <property name="asignedLaptop" ref="laptop"/> -->
+    </bean>
+    <bean id="laptop" class="spring_demo.Laptop"></bean>
+
+
+</beans>
