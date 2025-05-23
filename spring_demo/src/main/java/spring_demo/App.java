@@ -22,6 +22,11 @@ public class App
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
         Desktop desktop = context.getBean(Desktop.class);
+        //Desktop desktop2 = context.getBean("laMaquina", Desktop.class);
         desktop.compile();
+
+        Person person = context.getBean(Person.class);
+        person.code();
     }
 }
+

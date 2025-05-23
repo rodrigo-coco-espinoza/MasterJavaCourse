@@ -1,5 +1,8 @@
 package spring_demo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Desktop implements Computer {
 
     public Desktop()

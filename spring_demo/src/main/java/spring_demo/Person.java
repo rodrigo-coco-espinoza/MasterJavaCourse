@@ -2,8 +2,16 @@ package spring_demo;
 
 import java.beans.ConstructorProperties;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Person {
-    private int age;
+    
+    @Value("21")
+    private int age;   
     private Computer assignedComputer;
 
     public Person()
@@ -27,6 +35,8 @@ public class Person {
     public Computer getAssignedComputer() {
         return assignedComputer;
     }
+    @Autowired // Autowire the computer bean
+    //@Qualifier("laptop") // Use class name with lowercase first letter
     public void setAssignedComputer(Computer assignedComputer) {
         this.assignedComputer = assignedComputer;
     }
