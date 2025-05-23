@@ -4,17 +4,17 @@ import java.beans.ConstructorProperties;
 
 public class Person {
     private int age;
-    private Laptop assignedLaptop;
+    private Computer assignedComputer;
 
     public Person()
     {
         System.out.println("Person object created");
     }
-    @ConstructorProperties({"age", "assignedLaptop"})
-    public Person(int age, Laptop assignedLaptop)
+    @ConstructorProperties({"age", "assignedComputer"})
+    public Person(int age, Computer assignedComputer)
     {
         this.age = age;
-        this.assignedLaptop = assignedLaptop;
+        this.assignedComputer = assignedComputer;
         System.out.println("Person object created with age: " + age);
     }
 
@@ -24,15 +24,16 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
-    public Laptop getAssignedLaptop() {
-        return assignedLaptop;
+    public Computer getAssignedComputer() {
+        return assignedComputer;
     }
-    public void setAssignedLaptop(Laptop assignedLaptop) {
-        this.assignedLaptop = assignedLaptop;
+    public void setAssignedComputer(Computer assignedComputer) {
+        this.assignedComputer = assignedComputer;
     }
     
     public void code()
     {
         System.out.println("Coding...");
-        assignedLaptop.compile();
+        assignedComputer.compile();
     }
+}

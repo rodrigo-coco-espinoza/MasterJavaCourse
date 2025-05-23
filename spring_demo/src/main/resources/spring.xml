@@ -3,21 +3,25 @@
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="person" class="spring_demo.Person">
+    <bean id="person" class="spring_demo.Person" autowire="byType">
         <!-- Assing value through constructor if every data type is different <constructor-arg type="int" value="21"/>
         <constructor-arg type="spring_demo.Laptop" ref="laptop"/> -->
 
-        <constructor-arg index="0" value="21"/>
-        <constructor-arg index="1" ref="laptop"/>
+        <!-- <constructor-arg index="0" value="21"/>
+        <constructor-arg index="1" ref="laptop"/> -->
 
         <!-- Assing value through constructor and name 
         <constructor-arg name="age" value="21"/>
         <constructor-arg name="assignedLaptop" ref="laptop" /> 
         Must use @ConstructorProperties in class -->
 
-        <!-- Assing value through setter <property name="asignedLaptop" ref="laptop"/> -->
+        <!-- Assing value through setter -->
+        <property name="age" value="21"/> 
+        <!-- <property name="assignedComputer" ref="desktop"/> -->
+        <!-- <property name="assignedComputer" ref="laptop"/> -->
     </bean>
-    <bean id="laptop" class="spring_demo.Laptop"></bean>
+    <bean id="laptop" class="spring_demo.Laptop" primary="true"></bean>
+    <bean id="desktop" class="spring_demo.Desktop" lazy-init="true"></bean>
 
 
 </beans>
