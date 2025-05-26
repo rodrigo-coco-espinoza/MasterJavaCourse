@@ -6,18 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.javamastercourse.springJDBC_demo.model.Student;
-import com.javamastercourse.springJDBC_demo.reposotory.StudentReposotory;
+import com.javamastercourse.springJDBC_demo.repository.StudentRepository;
 
 @Service
 public class StudentService {
-    private StudentReposotory studentReposotory;
+    private StudentRepository studentReposotory;
 
-    public StudentReposotory getStudentReposotory() {
+    public StudentRepository getStudentReposotory() {
         return studentReposotory;
     }
 
     @Autowired
-    public void setStudentReposotory(StudentReposotory studentReposotory) {
+    public void setStudentReposotory(StudentRepository studentReposotory) {
         this.studentReposotory = studentReposotory;
     }
 

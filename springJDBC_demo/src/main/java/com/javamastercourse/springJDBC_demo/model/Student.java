@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class Student 
 {
     private int studentId;
-    private String Name;
+    private String name;
     private int marks;
 
     public int getStudentId() {
@@ -20,11 +20,11 @@ public class Student
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        this.Name = name;
+        this.name = name;
     }
 
     public int getMarks() {
@@ -37,7 +37,7 @@ public class Student
 
     @Override
     public String toString() {
-        return "Student [studentId=" + studentId + ", Name=" + Name + ", marks=" + marks + "]";
+        return "Student [studentId=" + studentId + ", Name=" + name + ", marks=" + marks + "]";
     }
 
 }
