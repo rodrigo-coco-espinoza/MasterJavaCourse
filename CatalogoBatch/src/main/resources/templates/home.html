@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - CatalogoBatch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg bg-white py-5 mb-5 position-relative">
+        <h1 class="mx-auto display-3">Catalogo Batch</h1>
+        <div class="position-absolute position-absolute bottom-0 end-0 me-3">
+            <ul class="navbar-nav flex-row">
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="/">Inicio</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="/todos">Explorar</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="/agregar">Agregar</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-md-5 mb-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Explorar catálogo</h5>
+                                <p class="card-text">Consulta todas las entregas registradas en el catálogo.</p>
+                                <a href="/todos" class="btn btn-primary mt-auto align-self-start">
+                                    Ver todos <span class="ms-2">&#8594;</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 mb-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Nueva entrega</h5>
+                                <p class="card-text">Agrega una nueva entrega al catálogo de manera sencilla.</p>
+                                <a href="/agregar" class="btn btn-success mt-auto align-self-start">
+                                    Agregar entrega <span class="ms-2">&#8594;</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer fixed-bottom my-5 mx-auto align-items-center text-center bg-light">
+        2025 - AIET
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar - CatalogoBatch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg bg-white py-5 mb-5 position-relative">
+        <h1 class="mx-auto display-3">Catalogo Batch</h1>
+        <div class="position-absolute position-absolute bottom-0 end-0 me-3">
+            <ul class="navbar-nav flex-row">
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="/">Inicio</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="/todos">Explorar</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="/agregar">Agregar</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="mb-4">Agregar nueva entrega</h2>
+                <form action="#" th:action="@{/agregar}" method="post" th:object="${entrega}" class="bg-white p-4 rounded shadow-sm">
+                    <div class="mb-3">
+                        <label for="id" class="form-label">ID</label>
+                        <input th:field="*{id}" type="text" class="form-control" id="id" name="id" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input th:field="*{nombre}" type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripción</label>
+                        <textarea th:field="*{descripcion}" class="form-control" id="descripcion" name="description" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="prepara" class="form-label">Subdirección que prepara</label>
+                        <select th:field="*{prepara}" class="form-select" id="prepara" name="prepara" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="Asistencia al Contribuyente">Asistencia al Contribuyente</option>
+                            <option value="Fiscalización">Fiscalización</option>
+                            <option value="Avalúos">Avaluaciones</option>
+                            <option value="Informática">Tecnologías de la Información</option>
+                            <option value="Recursos Humanos">Jurídica</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="periodicidad" class="form-label">Periodicidad</label>
+                        <select th:filed="*{periodicidad}" class="form-select" id="periodicidad" name="periodicidad" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="Semanal">Semanal</option>
+                            <option value="Mensual">Mensual</option>
+                            <option value="Bimestral">Bimestral</option>
+                            <option value="Trimestral">Trimestral</option>
+                            <option value="Semestral">Semestral</option>
+                            <option value="Anual">Anual</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="campos" class="form-label">Seleccionar campos</label>
+                        <select th:field="*{campos}" class="form-select" id="campos" name="campos" multiple required>
+                            <option value="rut">rut</option>
+                            <option value="dv">dv</option>
+                            <option value="fechaIncorporacion">fechaIncorporación</option>
+                            <option value="razonSocial">razonSocial</option>
+                            <option value="nombre">nombre</option>
+                            <option value="apellidoPaterno">apellidoPaterno</option>
+                            <option value="apellidoMaterno">apellidoMaterno</option>
+                            <option value="monto">monto</option>
+                            <option value="direccion">direccion</option>
+                            <option value="telefono">telefono</option>
+                            <option value="email">email</option>
+                            <option value="codigoPostal">codigoPostal</option>
+                            <option value="ciudad">ciudad</option>
+                            <option value="region">region</option>
+                            <option value="pais">pais</option>
+                            <option value="tipoDocumento">tipoDocumento</option>
+                            <option value="numeroDocumento">numeroDocumento</option>
+                            <option value="fechaNacimiento">fechaNacimiento</option>
+                            <option value="genero">genero</option>
+                            <option value="estadoCivil">estadoCivil</option>
+                            <option value="nacionalidad">nacionalidad</option>
+                            <option value="profesion">profesion</option>
+                            <option value="actividadEconomica">actividadEconomica</option>
+                            <option value="tipoContribuyente">tipoContribuyente</option>
+                            <option value="fechaInicioActividades">fechaInicioActividades</option>
+                            <option value="fechaTerminoActividades">fechaTerminoActividades</option>
+                            <option value="representanteLegal">representanteLegal</option>
+                            <option value="rutRepresentante">rutRepresentante</option>
+                            <option value="dvRepresentante">dvRepresentante</option>
+                            <option value="emailRepresentante">emailRepresentante</option>
+                            <option value="telefonoRepresentante">telefonoRepresentante</option>
+                            <option value="direccionRepresentante">direccionRepresentante</option>
+                            <option value="codigoSucursal">codigoSucursal</option>
+                            <option value="nombreSucursal">nombreSucursal</option>
+                        </select>
+                        <div class="form-text">Mantenga presionada la tecla Ctrl (Windows) o Cmd (Mac) para seleccionar múltiples campos.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Agregar entrega</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 60px;"></div>
+        <footer class="footer my-5 mx-auto align-items-center text-center bg-light" style="height: 60px; line-height: 60px;">
+            2025 - AIET
+        </footer>
+    </div>
+
+
+</body>
+</html>
