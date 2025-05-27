@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
@@ -46,20 +47,43 @@ public class HomeController
     }
 
     @PostMapping("/calculator")
-    public String doCalculate(@ModelAttribute("numeros") Numeros numeros, Model model) 
+    public ModelAndView doCalculate(Numeros numeros, ModelAndView modelAndView) 
     {
         System.out.println("HomeController.doCalculate() called with: " + numeros);
         
         // Perform the calculation (for example, addition)
         int result = numeros.getNumber1() + numeros.getNumber2();
         
-        // Add the result to the model
-        model.addAttribute("result", result);
+        // Add the result to the modelAndView
+        modelAndView.addObject("result", result);
+        //modelAndView.addObject("numeros", numeros); // Add the original numbers to the model
         
-        // Return the view name to display the result
-        return "result"; 
+        // Set the view name to display the result
+        modelAndView.setViewName("result"); 
+        
+        return modelAndView; 
     }
+    // {
+    //     System.out.println("HomeController.doCalculate() called with: " + numeros);
+        
+    //     // Perform the calculation (for example, addition)
+    //     int result = numeros.getNumber1() + numeros.getNumber2();
+        
+    //     // Add the result to the model
+    //     model.addAttribute("result", result);
+    //     model.addAttribute("numeros", numeros); // Add the original numbers to the model
+        
+    //     // Return the view name to display the result
+    //     return "result"; 
+    // }
 
+    @GetMapping("/")
+    public String index() 
+    {
+        // This method handles requests to the root URL ("/") and returns the index view
+        System.out.println("HomeController.index() called");
+        return "index"; // This will resolve to /WEB-INF/jsp/index.jsp if configured properly 
+    }
 
 
 }
