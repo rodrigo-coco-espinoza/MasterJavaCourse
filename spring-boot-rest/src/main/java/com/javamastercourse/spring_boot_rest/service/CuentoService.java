@@ -22,13 +22,22 @@ public class CuentoService {
 
     public List<Cuento> getAllCuentos() 
     {
-        System.out.println("Fetching all cuentos from the repository");
         return repository.findAll();
     }
 
     public Cuento getCuentoById(int id) 
     {
         return repository.findById(id);
+    }
+
+    public void updateCuento(Cuento cuento) 
+    {
+        repository.update(cuento);
+    }
+
+    public void deleteCuento(int id) {
+
+        repository.remove(id);
     }
 
     

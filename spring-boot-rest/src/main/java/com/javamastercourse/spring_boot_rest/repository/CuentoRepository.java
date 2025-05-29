@@ -13,7 +13,7 @@ import com.javamastercourse.spring_boot_rest.model.Cuento;
 @Repository
 public class CuentoRepository {
 
-    List<Cuento> entregas = new ArrayList<>(Arrays.asList(
+    List<Cuento> cuentos = new ArrayList<>(Arrays.asList(
         new Cuento(1, "El Principito", "Un cuento sobre la amistad y la soledad", "el_principito.txt", 30, "Fácil", Arrays.asList("imagen1.jpg", "imagen2.jpg"), "2023-01-01"),
         new Cuento(2, "Caperucita Roja", "Un clásico cuento de advertencia", "caperucita_roja.txt", 15, "Fácil", Arrays.asList("caperucita1.jpg", "caperucita2.jpg"), "2023-02-01"),
         new Cuento(3, "La Bella Durmiente", "Un cuento de amor y magia", "bella_durmiente.txt", 20, "Media", Arrays.asList("bella1.jpg", "bella2.jpg"), "2023-03-01"),
@@ -22,19 +22,48 @@ public class CuentoRepository {
 
     ));
 
-    public List<Cuento> findAll() {
-        System.out.println("estoy buscnado");
-        return entregas;
+    public List<Cuento> findAll() 
+    {
+        return cuentos;
     }
 
-    public Cuento findById(int id) {
-        return entregas.stream()
+    public Cuento findById(int id) 
+    {
+        return cuentos.stream()
                 .filter(entrega -> entrega.getId() == id)
                 .findFirst()
                 .orElse(null);
     }
 
-    public void save(Cuento entrega) {
-        entregas.add(entrega);
-    }   
+    public void save(Cuento entrega) 
+    {
+        cuentos.add(entrega);
+    }
+
+    public void update(Cuento cuento) 
+    {
+        for (Cuento cuentoDB : cuentos)
+        {
+            if (cuentoDB.getId() == cuento.getId()) 
+            {
+                cuentoDB.setTitulo(cuento.getTitulo());
+                cuentoDB.setDescripcion(cuento.getDescripcion());
+                cuentoDB.setTextoFile(cuento.getTextoFile());
+                cuentoDB.setTiempoLectura(cuento.getTiempoLectura());
+                cuentoDB.setDificultad(cuento.getDificultad());
+                cuentoDB.setImagenes(cuento.getImagenes());
+            }
+        }
+    }
+
+    public void remove(int id) {
+        for (Cuento cuento : cuentos) {
+            if (cuento.getId() == id) 
+            {
+                cuentos.remove(cuento);
+                break;
+            }
+        }   
+    }
+
 }
