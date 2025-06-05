@@ -32,8 +32,16 @@ public class CuentoController {
     }
 
     @GetMapping("/cuento/{id}")
-    public Cuento getCuentoById(@PathVariable() int id) {
+    public Cuento getCuentoById(@PathVariable() int id) 
+    {
         return service.getCuentoById(id);
+    }
+
+    @GetMapping("/cuento/keyword/{keyword}")
+    public List<Cuento> searchCuentosByKeyword(@PathVariable() String keyword) 
+    {
+        return service.searchByKeyword(keyword);
+
     }
 
     @PostMapping(path="/cuento", consumes={"application/json"})
@@ -55,5 +63,11 @@ public class CuentoController {
     {
         service.deleteCuento(id);
         return "Cuento with ID " + id + " deleted successfully.";
+    }
+
+    @GetMapping("/load")
+    public String loadCuentos() {
+        service.load();
+        return "Cuentos loaded successfully.";
     }
 }
