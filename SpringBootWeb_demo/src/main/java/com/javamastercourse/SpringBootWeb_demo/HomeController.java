@@ -82,7 +82,7 @@ public class HomeController
     {
         // This method handles requests to the root URL ("/") and returns the index view
         System.out.println("HomeController.index() called");
-        return "index"; // This will resolve to /WEB-INF/jsp/index.jsp if configured properly 
+        return ""; // This will resolve to /WEB-INF/jsp/index.jsp if configured properly 
     }
 
 
